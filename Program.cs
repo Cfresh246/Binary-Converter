@@ -29,6 +29,30 @@ namespace Binary_Converter
             Console.WriteLine(total + "₂");
             Console.Write("Press any key to continue..."); Console.ReadKey();
         }
+        static void DecimalToBinary()
+        {
+            Console.Clear();
+            Console.WriteLine("===== Decimal to Binary =====");
+
+            int number = ReadDecimal();
+
+            string binaryNumber = "";
+
+            do
+            {
+                binaryNumber += number % 2;
+                number /= 2;
+            } while (number > 0);
+
+            string reverseNumber = "";
+            for (int i = binaryNumber.Length - 1; i >= 0; i--)
+            {
+                reverseNumber += binaryNumber[i];
+            }
+
+            Console.WriteLine(reverseNumber + "₁₀");
+            Console.Write("Press any key to continue..."); Console.ReadKey();
+        }
         static string ReadBinary()
         {
             while (true)
@@ -50,6 +74,22 @@ namespace Binary_Converter
                 {
                     return number;
                 }
+            }
+        }
+        static int ReadDecimal()
+        {
+            while (true)
+            {
+                Console.Write("Enter a binary number: ");
+                string? number = Console.ReadLine().Replace(" ", "");
+
+                if (!int.TryParse(number, out int result))
+                {
+                    Console.WriteLine("Error: Please enter a valid decimal number.");
+                    Console.Write("Press any key to continue..."); Console.ReadKey();
+                }
+
+                return result;
             }
         }
         static void MainMenu()
@@ -82,6 +122,7 @@ namespace Binary_Converter
                 switch (option)
                 {
                     case 1: BinaryToDecimal(); break;
+                    case 2: DecimalToBinary(); break;
                 }
             }
         }
