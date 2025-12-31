@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Binary_Converter
 {
@@ -10,6 +11,8 @@ namespace Binary_Converter
 
             MainMenu();
         }
+
+        // 1 - Logique de conversion binaire -> decimal
         static void BinaryToDecimal()
         {
             Console.Clear();
@@ -29,6 +32,8 @@ namespace Binary_Converter
             Console.WriteLine(total + "₂");
             Console.Write("Press any key to continue..."); Console.ReadKey();
         }
+
+        // 2 - Logique de conversion decimal -> binaire
         static void DecimalToBinary()
         {
             Console.Clear();
@@ -53,6 +58,8 @@ namespace Binary_Converter
             Console.WriteLine(reverseNumber + "₁₀");
             Console.Write("Press any key to continue..."); Console.ReadKey();
         }
+
+        // Helpers pour nombres binaires.
         static string ReadBinary()
         {
             while (true)
@@ -76,6 +83,8 @@ namespace Binary_Converter
                 }
             }
         }
+
+        // Helpers pour decimal
         static int ReadDecimal()
         {
             while (true)
