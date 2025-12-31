@@ -64,7 +64,7 @@ namespace Binary_Converter
         {
             while (true)
             {
-                Console.Write("Enter a number: ");
+                Console.Write("Enter a binary number: ");
                 string? number = Console.ReadLine().Replace(" ", "");
 
                 bool IsValid = true;
@@ -89,7 +89,7 @@ namespace Binary_Converter
         {
             while (true)
             {
-                Console.Write("Enter a binary number: ");
+                Console.Write("Enter a decimal number: ");
                 string? number = Console.ReadLine().Replace(" ", "");
 
                 if (!int.TryParse(number, out int result))
